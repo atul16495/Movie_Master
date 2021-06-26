@@ -7,23 +7,24 @@ import { TextField, Button } from '@material-ui/core'
 import { useForm, Controller } from "react-hook-form";
 
 const Signup = () => {
+
+  const [firstName, setFirstName] = useState('');
+  const [lastName, setLastName] = useState('');
+  const [email, setEmail] = useState('');
+  const [password, set_password] = useState("")
+  const [contactNo, setContactNo] = useState('');
+  const [RegStatus, setRegStatus] = useState('');
+
+
     const { register, handleSubmit, control, errors } = useForm();
-    const onSubmit = (data) => console.log(data);
-    console.log(errors);
-    function login(event) {
-        event.preventDefault();
-        console.log("firstName",firstName)
-        console.log("lastName",lastName)
-        console.log("email",email)
-        console.log("password",password)
-        console.log("contactNo",contactNo)
+    const onSubmit = (data) => {
+      if(data){ 
+              setRegStatus("Registration Successful. Please Login!");            
+                console.log("Registration Successful. Please Login!");
+           }
     }
     
-    const [firstName, setFirstName] = useState('');
-    const [lastName, setLastName] = useState('');
-    const [email, setEmail] = useState('');
-    const [password, set_password] = useState("")
-    const [contactNo, setContactNo] = useState('');
+         
     
 
     return (
@@ -33,7 +34,7 @@ const Signup = () => {
                 <form onSubmit={handleSubmit(onSubmit)} >
 
                 <FormControl   >
-                 <InputLabel  >First Name*</InputLabel>
+                 <InputLabel  error={Boolean(errors.firstname)} >First Name*</InputLabel>
                  <Input 
                  
                  fullWidth placeholder='Enter First Name'
@@ -59,7 +60,7 @@ const Signup = () => {
 
 
                  <FormControl >
-                 <InputLabel >Last Name*</InputLabel>
+                 <InputLabel error={Boolean(errors.lastName)} >Last Name*</InputLabel>
                  <Input 
                  fullWidth placeholder='Enter Last Name'                    
                  name="lastname"
@@ -83,7 +84,7 @@ const Signup = () => {
 
 
                  <FormControl >
-                 <InputLabel >Email*</InputLabel>
+                 <InputLabel error={Boolean(errors.email)}  >Email*</InputLabel>
                  <Input 
                  fullWidth placeholder='Enter Email' 
                  id="email"  
@@ -105,7 +106,7 @@ const Signup = () => {
                  </FormControl>
 
                  <FormControl >
-                 <InputLabel >Password*</InputLabel>
+                 <InputLabel error={Boolean(errors.password)}  >Password*</InputLabel>
                  <Input
                   fullWidth placeholder='Enter Password'
                   id="password"
@@ -128,7 +129,7 @@ const Signup = () => {
 
 
                  <FormControl >
-                 <InputLabel >Contact No*</InputLabel>
+                 <InputLabel error={Boolean(errors.contactNo)} >Contact No*</InputLabel>
                  <Input 
                  fullWidth placeholder='Enter Contact No'
                  id="contactNo"
@@ -148,6 +149,9 @@ const Signup = () => {
                  Required
                  </FormHelperText>
                  </FormControl>
+                 <div>
+                  {RegStatus}
+                   </div>
                    <div>                     
              <Button type='submit' variant='contained' color='primary'>Register</Button>
              </div>

@@ -8,8 +8,10 @@ import { useForm, Controller } from "react-hook-form";
 
 const Login=({handleChange})=>{
     const { register, handleSubmit, control, errors } = useForm();
-    const onSubmit = (data) => console.log(data);
+    const onSubmit = (data) => {
+         console.log(data)};
     console.log(errors);
+    
 
 
     function login(event) {
@@ -28,7 +30,7 @@ const Login=({handleChange})=>{
          < div className="LoginDetails">
          <form onSubmit={handleSubmit(onSubmit)}>
            <FormControl  >
-            <InputLabel >Username</InputLabel>
+            <InputLabel error={Boolean(errors.userName)} >Username</InputLabel>
             <Input 
             fullWidth placeholder='Enter username' 
             name="userName"
@@ -48,14 +50,15 @@ const Login=({handleChange})=>{
              inputRef={register({
                required: "required.",
              })}
-             error={Boolean(errors.userName)}  >
+             error={Boolean(errors.userName)} 
+              >
                {HelperText}
              </FormHelperText>
             </FormControl>
 
 
             <FormControl >
-            <InputLabel >Password</InputLabel>
+            <InputLabel error={Boolean(errors.password)} >Password</InputLabel>
             <Input 
             fullWidth placeholder='Enter password' 
             name="password"

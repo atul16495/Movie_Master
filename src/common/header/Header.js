@@ -82,7 +82,7 @@ const [ShowIsOpen, setShowIsOpen] = useState(false)
                
        {/*   <!-- login --> */}
            
-     <Modal isOpen={loginIsOpen} style={ModalStyles} onRequestClose={()=> setShowIsOpen(false)}>
+     <Modal isOpen={loginIsOpen} style={ModalStyles} onRequestClose={()=> setloginIsOpen(false)}>
         <Paper style={paperStyle}>
         <Tabs
           value={value}
