@@ -14,6 +14,21 @@
     padding: '8px 15px',
     
 }
+.Form-Username{
+   
+    text-align: center;
+    padding-top: 20px;
+}
+
+.Form-Password{
+    
+    text-align: center;
+    padding-top: 20px;
+}
+.Form_Login{
+    text-align: center;
+    padding-top: 40px;
+}
 
 .Logout{
     float:right;
@@ -23,7 +38,6 @@
 
 .BookShow{
     float: right;
-   
     padding: '8px 15px',
 }
 
@@ -40,3 +54,27 @@
       transform: rotate3d(0, 1, 0, 360deg);
     }
   }
+
+
+
+/****** Register style ******/
+.RegisterDetails{
+    text-align: center;
+   
+}
+.LoginDetails{
+    text-align: center;
+}
+.Login1{
+    text-align: center;
+    padding-top: 40px;
+}
+  
+/****** Modal style ******/
+.modal .modal-content {
+    padding: 20px 20px 20px 20px;
+    -webkit-animation-name: modal-animation;
+    -webkit-animation-duration: 0.5s;
+    animation-name: modal-animation;
+    animation-duration: 0.5s;
+}
