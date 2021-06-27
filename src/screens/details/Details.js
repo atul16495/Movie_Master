@@ -392,8 +392,8 @@ const Details = (props) => {
                    </Typography>
                     <StarBorderIcon
                         fontSize="inherit"
-                        color='yellow'
-                        style={{ fontSize: "30px" }}
+                        
+                        style={{ fontSize: "30px", color:'yellow' }}
                     />
                     <StarBorderIcon
                         fontSize="inherit"
