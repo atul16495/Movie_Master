@@ -104,7 +104,7 @@ const poster_url = [
                 first_name: "Paul",
                 last_name: "Rudd",
             }
-           
+
         ]
 
     },
@@ -144,7 +144,7 @@ const poster_url = [
                 first_name: "Scarlett",
                 last_name: "Johansson",
             }
-           
+
         ]
     },
     {
@@ -171,7 +171,7 @@ const poster_url = [
                 first_name: "Chedwick ",
                 last_name: "Aaron Boseman",
             }
-           
+
         ]
     },
     {
@@ -191,7 +191,7 @@ const poster_url = [
                 key: 1,
                 first_name: "Joaquin",
                 last_name: "Phoenix",
-            }           
+            }
         ]
     },
     {
@@ -217,8 +217,8 @@ const poster_url = [
                 key: 2,
                 first_name: "Karen",
                 last_name: "Gillan",
-            } ,
-                      
+            },
+
         ]
     },
     {
@@ -244,14 +244,14 @@ const poster_url = [
                 key: 2,
                 first_name: "Rosa",
                 last_name: "Salazar",
-            } ,
-                      
+            },
+
         ]
     }
 ]
 
 
-const useStyles = makeStyles((theme)=>({
+const useStyles = makeStyles((theme) => ({
     root: {
         width: '100%',
         maxWidth: 500,
@@ -269,20 +269,20 @@ const useStyles = makeStyles((theme)=>({
         flexWrap: 'wrap',
         justifyContent: 'space-around',
         overflow: 'hidden'
-      },
-      gridList: {
+    },
+    gridList: {
         width: 500,
         height: 450,
-      },
-      icon: {
+    },
+    icon: {
         color: 'rgba(255, 255, 255, 0.54)',
-      },
-      Backtohome:{
-          marginLeft:'24px',
-          marginTop: '8px',    
-          marginBottom: '0px',
-          height:'24px'
-      }
+    },
+    Backtohome: {
+        marginLeft: '24px',
+        marginTop: '8px',
+        marginBottom: '0px',
+        height: '24px'
+    }
 }));
 
 //---------Youtube settings-----//
@@ -295,34 +295,41 @@ const videoOnReady = (event) => {
 //---------Youtube settings END-----//
 
 //---------Rightside Artists Grid START-----//
-const ArtistbarGridList =()=>{
+const ArtistbarGridList = () => {
     const classes = useStyles();
-  
-    return (
-      <div className={classes.root1}>
-        <GridList cellHeight={180} className={classes.gridList}>
-          {poster_url[1].Artists.map((tile) => (
-            <GridListTile key={tile.img}>
-              <img src={tile.img} alt={tile.title} />
-              <GridListTileBar
-                title={tile.first_name}
-                subtitle={<span>by: {tile.author}</span>}
-                actionIcon={
-                  <IconButton aria-label={`info about ${tile.title}`} className={classes.icon}>
-                    <InfoIcon />
-                  </IconButton>
-                }
-              />
-            </GridListTile>
-          ))}
-        </GridList>
-      </div>
-    );
-  }
 
-  //---------Rightside Artists Grid START-----//
+    return (
+        <div className={classes.root1}>
+            <GridList cellHeight={180} className={classes.gridList}>
+                {poster_url[1].Artists.map((tile) => (
+                    <GridListTile key={tile.img}>
+                        <img src={tile.img} alt={tile.title} />
+                        <GridListTileBar
+                            title={tile.first_name}
+                            subtitle={tile.last_name}
+                        />
+                    </GridListTile>
+                ))}
+            </GridList>
+        </div>
+    );
+}
+
+//---------Rightside Artists Grid END-----//
+
+
+
 
 const Details = (props) => {
+    //---------Rate this movie usestate START-----//
+    const [star1, set_star1] = useState("black")
+    const [star2, set_star2] = useState("black")
+    const [star3, set_star3] = useState("black")
+    const [star4, set_star4] = useState("black")
+    const [star5, set_star5] = useState("black")
+
+
+    //---------Rate this movie usestate END-----//
     const classes = useStyles();
     return (
         <Fragment>
@@ -392,35 +399,85 @@ const Details = (props) => {
                    </Typography>
                     <StarBorderIcon
                         fontSize="inherit"
-                        
-                        style={{ fontSize: "30px", color:'yellow' }}
+                        onClick={()=>{
+                            if(star1==="yellow")
+                            {
+                                set_star1("black")
+                            }
+                            else if(star1==="black")
+                            {
+                                set_star1("yellow")
+                            }
+                            }
+                        }
+                        style={{ fontSize: "30px",color:star1 }}
                     />
                     <StarBorderIcon
                         fontSize="inherit"
-                        style={{ fontSize: "30px" }}
+                        onClick={()=>{
+                            if(star2==="yellow")
+                            {
+                                set_star2("black")
+                            }
+                            else if(star2==="black")
+                            {
+                                set_star2("yellow")
+                            }
+                            }
+                        }
+                        style={{ fontSize: "30px",color:star2  }}
                     />
                     <StarBorderIcon
                         fontSize="inherit"
-                        style={{ fontSize: "30px" }}
+                        onClick={()=>{
+                            if(star3==="yellow")
+                            {
+                                set_star3("black")
+                            }
+                            else if(star3==="black")
+                            {
+                                set_star3("yellow")
+                            }
+                            }
+                        }
+                        style={{ fontSize: "30px",color:star3 }}
                     />
                     <StarBorderIcon
                         fontSize="inherit"
-                        style={{ fontSize: "30px" }}
+                        onClick={()=>{
+                            if(star4==="yellow")
+                            {
+                                set_star4("black")
+                            }
+                            else if(star4==="black")
+                            {
+                                set_star4("yellow")
+                            }
+                            }
+                        }
+                        style={{ fontSize: "30px",color:star4 }}
                     />
                     <StarBorderIcon
                         fontSize="inherit"
-                        style={{ fontSize: "30px" }}
-                    />
-                    <StarBorderIcon
-                        fontSize="inherit"
-                        style={{ fontSize: "30px" }}
+                        onClick={()=>{
+                            if(star5==="yellow")
+                            {
+                                set_star5("black")
+                            }
+                            else if(star5==="black")
+                            {
+                                set_star5("yellow")
+                            }
+                            }
+                        }
+                        style={{ fontSize: "30px",color:star5}}
                     />
                     <Typography variant="h5" className={classes.bold}>
                         Artists:
                    </Typography>
-                   <div>
-                   <ArtistbarGridList/>
-                       </div>
+                    <div>
+                        <ArtistbarGridList />
+                    </div>
 
 
                 </div>

@@ -39,6 +39,7 @@ import TanhajiSaifAliKhan from '../../assets/TanhajiSaifAliKhan.jpg';
 
 
 
+
 const poster_url = [
   {
       img: Tanhaji,
@@ -46,9 +47,36 @@ const poster_url = [
       title: 'Tanhaji',
       author: 'Atul',
       genere: "Action,Adventure,Sci-Fi",
-      Duration:148,
-      Rating:8.8,
-      Plot:"Tanhaji, a Maratha warrior, is Shivaji Maharaj's trusted lieutenant. When the Mughals invade and conquer Kondhana fort, he sets out to reclaim it for his king and country."
+      Duration: 148,
+      Rating: 8.8,
+      trailer_url: "cffAGIYTEHU",
+      Plot: "Tanhaji, a Maratha warrior, is Shivaji Maharaj's trusted lieutenant. When the Mughals invade and conquer Kondhana fort, he sets out to reclaim it for his king and country.",
+      Artists: [
+          {
+              img: Tanhaji_AjayDevgan,
+              key: 1,
+              first_name: "Ajay",
+              last_name: "Devgan",
+          },
+          {
+              img: Tanhaji_Kajol,
+              key: 2,
+              first_name: "Kajol",
+              last_name: "Devgan",
+          },
+          {
+              img: TanhajiSaifAliKhan,
+              key: 3,
+              first_name: "Saif Ali",
+              last_name: "Khan",
+          },
+          {
+              img: Tanhaji_SharadKelkar,
+              key: 4,
+              first_name: "Sharad",
+              last_name: "Kelkar",
+          }
+      ]
   },
   {
       img: Antman,
@@ -57,9 +85,26 @@ const poster_url = [
       author: 'Atul',
       ReleaseDate: "16 April 2021",
       genere: "Action,Adventure,Sci-Fi",
-      Duration:148,
-      Rating:8.8,
-      Plot:"Scott, a master thief, gains the ability to shrink in scale with the help of a futuristic suit. Now he must rise to the occasion of his superhero status and protect his secret from unsavoury elements."
+      Duration: 148,
+      Rating: 8.8,
+      trailer_url: "ZBVhuhnWxKs",
+      Plot: "Scott, a master thief, gains the ability to shrink in scale with the help of a futuristic suit. Now he must rise to the occasion of his superhero status and protect his secret from unsavoury elements.",
+      Artists: [
+          {
+              img: Antman_EvangelineLilly,
+              key: 1,
+              first_name: "Evangeline",
+              last_name: "Lilly",
+          },
+          {
+              img: Antman_PaulRudd,
+              key: 2,
+              first_name: "Paul",
+              last_name: "Rudd",
+          }
+
+      ]
+
   },
   {
       img: AvengersEndgame,
@@ -68,9 +113,37 @@ const poster_url = [
       author: 'Atul',
       ReleaseDate: "16 April 2021",
       genere: "Action,Adventure,Sci-Fi",
-      Duration:148,
-      Rating:8.8,
-      Plot:"After Thanos, an intergalactic warlord, disintegrates half of the universe, the Avengers must reunite and assemble again to reinvigorate their trounced allies and restore balance."
+      Duration: 148,
+      Rating: 8.8,
+      trailer_url: "TcMBFSGVi1c",
+      Plot: "After Thanos, an intergalactic warlord, disintegrates half of the universe, the Avengers must reunite and assemble again to reinvigorate their trounced allies and restore balance.",
+      Artists: [
+          {
+              img: AvengersEndgame_ChrisEvans,
+              key: 1,
+              first_name: "Chris",
+              last_name: "Evans",
+          },
+          {
+              img: AvengersEndgame_ChrisHemsworth,
+              key: 2,
+              first_name: "Chris",
+              last_name: "Hemsworth",
+          },
+          {
+              img: AvengersEndgame_RobertDowneyJr,
+              key: 3,
+              first_name: "Robert",
+              last_name: "Downey Jr",
+          },
+          {
+              img: AvengersEndgame_ScarlettJohansson,
+              key: 4,
+              first_name: "Scarlett",
+              last_name: "Johansson",
+          }
+
+      ]
   },
   {
       img: blackpanther,
@@ -79,9 +152,25 @@ const poster_url = [
       author: 'Atul',
       ReleaseDate: "16 April 2021",
       genere: "Action,Adventure,Sci-Fi",
-      Duration:148,
-      Rating:8.8,
-      Plot:"After his father's death, T'Challa returns home to Wakanda to inherit his throne. However, a powerful enemy related to his family threatens to attack his nation."
+      Duration: 148,
+      Rating: 8.8,
+      trailer_url: "xjDjIWPwcPU",
+      Plot: "After his father's death, T'Challa returns home to Wakanda to inherit his throne. However, a powerful enemy related to his family threatens to attack his nation.",
+      Artists: [
+          {
+              img: blackpanther_LupitaNyongo,
+              key: 1,
+              first_name: "Lupita",
+              last_name: "Nyongo",
+          },
+          {
+              img: blackpanther_ChadwickAaronBoseman,
+              key: 2,
+              first_name: "Chedwick ",
+              last_name: "Aaron Boseman",
+          }
+
+      ]
   },
   {
       img: Joker,
@@ -90,9 +179,18 @@ const poster_url = [
       author: 'Atul',
       ReleaseDate: "16 April 2021",
       genere: "Action,Adventure,Sci-Fi",
-      Duration:148,
-      Rating:8.8,
-      Plot:"Arthur Fleck, a party clown, leads an impoverished life with his ailing mother. However, when society shuns him and brands him as a freak, he decides to embrace the life of crime and chaos."
+      Duration: 148,
+      Rating: 8.8,
+      trailer_url: "zAGVQLHvwOY",
+      Plot: "Arthur Fleck, a party clown, leads an impoverished life with his ailing mother. However, when society shuns him and brands him as a freak, he decides to embrace the life of crime and chaos.",
+      Artists: [
+          {
+              img: Joker_JoaquinPhoenix,
+              key: 1,
+              first_name: "Joaquin",
+              last_name: "Phoenix",
+          }
+      ]
   },
   {
       img: Jumanji,
@@ -101,9 +199,25 @@ const poster_url = [
       author: 'Robert Rodriguez',
       ReleaseDate: "8 February 2019",
       genere: "Action,Adventure,Sci-Fi",
-      Duration:148,
-      Rating:8.8,
-      Plot:"Jumanji is a 1995 American fantasy adventure film directed by Joe Johnston. It is loosely based on the 1981 children's book by Chris Van Allsburg and the first installment of the Jumanji franchise."
+      Duration: 148,
+      Rating: 8.8,
+      trailer_url: "vW_fSIuE920",
+      Plot: "Jumanji is a 1995 American fantasy adventure film directed by Joe Johnston. It is loosely based on the 1981 children's book by Chris Van Allsburg and the first installment of the Jumanji franchise.",
+      Artists: [
+          {
+              img: Jumanji_DwayneJohnson,
+              key: 1,
+              first_name: "Dwayne",
+              last_name: "Johnson",
+          },
+          {
+              img: Jumanji_KarenGillan,
+              key: 2,
+              first_name: "Karen",
+              last_name: "Gillan",
+          },
+
+      ]
   },
   {
       img: Alita,
@@ -112,10 +226,25 @@ const poster_url = [
       author: 'Robert Rodriguez',
       ReleaseDate: "8 February 2019",
       genere: "Action,Adventure,Sci-Fi",
-      Duration:148,
-      Rating:8.8,
-      Plot:"Alita, a battle cyborg, is revived by Ido, a doctor, who realises that she actually has the soul of a teenager. Alita then sets out to learn about her past and find her true identity."
+      Duration: 148,
+      Rating: 8.8,
+      Plot: "Alita, a battle cyborg, is revived by Ido, a doctor, who realises that she actually has the soul of a teenager. Alita then sets out to learn about her past and find her true identity.",
+      trailer_url: "w7pYhpJaJW8",
+      Artists: [
+          {
+              img: Alita_KeeanJohnson,
+              key: 1,
+              first_name: "Keean",
+              last_name: "Johnson",
+          },
+          {
+              img: Alita_RosaSalazar,
+              key: 2,
+              first_name: "Rosa",
+              last_name: "Salazar",
+          },
 
+      ]
   }
 ]
 
@@ -199,7 +328,7 @@ const useStyles = makeStyles((theme) => ({
           <GridListTile key="Subheader" cols={4} style={{ height: 'auto' }}> </GridListTile>
           {poster_url.map((tile) => (
             <GridListTile key={tile.img}>
-              <img src={tile.img} alt={tile.title} />
+              <img src={tile.img} alt={tile.title}  />
               <GridListTileBar
                 title={tile.title}
                 subtitle={<span>Release Date: {tile.ReleaseDate}</span>}
