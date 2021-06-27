@@ -1,0 +1,33 @@
+.Backtohome{
+    margin-left:24px;
+    margin-top: 8px;    
+    margin-bottom: 0px;
+    height:24px
+}
+.container {
+    display: flex;
+    height: auto;
+   
+  }
+.left {
+    width: 20%;
+    height: auto;  
+}
+.middle {
+    width: 60%; 
+    height: auto;   
+}
+.right{
+    width:20%;
+}
+img:hover {
+    cursor: pointer;
+   
+}
+.leftImage{
+    
+    height: auto;
+    width: 80%;
+    padding-left: 7.5%;
+    padding-top: 3.5%;
+}

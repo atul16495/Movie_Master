@@ -13,66 +13,110 @@ import MovieFilter from './MovieFilter'
 
 // ---------Imported Images------------
 import Alita from '../../assets/Alita.jpg';
-import AvengersEndgame from '../../assets/AvengersEndgame.jpg';
-import blackpanther from '../../assets/blackpanther.jpg';
-import Joker from '../../assets/Joker.jpg';
-import Jumanji from '../../assets/Jumanji.jpg';
-import Tanhaji from '../../assets/Tanhaji.jpg';
+import Alita_KeeanJohnson  from '../../assets/Alita_KeeanJohnson.jpg';
+import Alita_RosaSalazar from '../../assets/Alita_RosaSalazar.jpg';
 import Antman from '../../assets/Antman.jpg';
-
+import Antman_EvangelineLilly from '../../assets/Antman_EvangelineLilly.jpg';
+import Antman_PaulRudd from '../../assets/Antman_PaulRudd.jpg';
+import AvengersEndgame from '../../assets/AvengersEndgame.jpg';
+import AvengersEndgame_ChrisEvans from '../../assets/AvengersEndgame_ChrisEvans.jpg';
+import AvengersEndgame_ChrisHemsworth from '../../assets/AvengersEndgame_ChrisHemsworth.jpg';
+import AvengersEndgame_RobertDowneyJr from '../../assets/AvengersEndgame_RobertDowneyJr.jpg';
+import AvengersEndgame_ScarlettJohansson from '../../assets/AvengersEndgame_ScarlettJohansson.jpg';
+import blackpanther from '../../assets/blackpanther.jpg';
+import blackpanther_LupitaNyongo from '../../assets/blackpanther_LupitaNyongo.jpg';
+import blackpanther_ChadwickAaronBoseman from '../../assets/blackpanther_ChadwickAaronBoseman.jpg';
+import Joker from '../../assets/Joker.jpg';
+import Joker_JoaquinPhoenix from '../../assets/Joker_JoaquinPhoenix.jpg';
+import Jumanji from '../../assets/Jumanji.jpg';
+import Jumanji_DwayneJohnson from '../../assets/Jumanji_DwayneJohnson.jpg';
+import Jumanji_KarenGillan from '../../assets/Jumanji_KarenGillan.jpg';
+import Tanhaji from '../../assets/Tanhaji.jpg';
+import Tanhaji_AjayDevgan from '../../assets/Tanhaji_AjayDevgan.jpg';
+import Tanhaji_Kajol from '../../assets/Tanhaji_Kajol.jpg';
+import Tanhaji_SharadKelkar from '../../assets/Tanhaji_SharadKelkar.jpg';
+import TanhajiSaifAliKhan from '../../assets/TanhajiSaifAliKhan.jpg';
 
 
 
 const poster_url = [
-      { 
-        img: Tanhaji,
-        key:1,
-        title: 'Tanhaji',
-        author: 'Atul',
-        ReleaseDate: "16 April 2021"
-    },
-    {
-        img: Antman,
-        key:2,
-        title: 'Antman',
-        author: 'Atul',
-        ReleaseDate: "16 April 2021"
-    },
-    {
-        img: AvengersEndgame,
-        key:3,
-        title: 'AvengersEndgame',
-        author: 'Atul',
-        ReleaseDate: "16 April 2021"
-    },
-    {
-        img: blackpanther,
-        key:4,
-        title: 'blackpanther',
-        author: 'Atul',
-        ReleaseDate: "16 April 2021"
-    },
-    {
-        img: Joker,
-        key:5,
-        title: 'Joker',
-        author: 'Atul',
-        ReleaseDate: "16 April 2021"
-    },
-    {
-        img: Jumanji,
-        key:6,
-        title: 'Jumanji',
-        author: 'Atul',
-        ReleaseDate: "16 April 2021"
-    },
-    {
-        img: Alita,
-        key:6,
-        title: 'Alita',
-        author: 'Atul',
-        ReleaseDate: "16 April 2021"
-    },
+  {
+      img: Tanhaji,
+      key: 1,
+      title: 'Tanhaji',
+      author: 'Atul',
+      genere: "Action,Adventure,Sci-Fi",
+      Duration:148,
+      Rating:8.8,
+      Plot:"Tanhaji, a Maratha warrior, is Shivaji Maharaj's trusted lieutenant. When the Mughals invade and conquer Kondhana fort, he sets out to reclaim it for his king and country."
+  },
+  {
+      img: Antman,
+      key: 2,
+      title: 'Antman',
+      author: 'Atul',
+      ReleaseDate: "16 April 2021",
+      genere: "Action,Adventure,Sci-Fi",
+      Duration:148,
+      Rating:8.8,
+      Plot:"Scott, a master thief, gains the ability to shrink in scale with the help of a futuristic suit. Now he must rise to the occasion of his superhero status and protect his secret from unsavoury elements."
+  },
+  {
+      img: AvengersEndgame,
+      key: 3,
+      title: 'AvengersEndgame',
+      author: 'Atul',
+      ReleaseDate: "16 April 2021",
+      genere: "Action,Adventure,Sci-Fi",
+      Duration:148,
+      Rating:8.8,
+      Plot:"After Thanos, an intergalactic warlord, disintegrates half of the universe, the Avengers must reunite and assemble again to reinvigorate their trounced allies and restore balance."
+  },
+  {
+      img: blackpanther,
+      key: 4,
+      title: 'blackpanther',
+      author: 'Atul',
+      ReleaseDate: "16 April 2021",
+      genere: "Action,Adventure,Sci-Fi",
+      Duration:148,
+      Rating:8.8,
+      Plot:"After his father's death, T'Challa returns home to Wakanda to inherit his throne. However, a powerful enemy related to his family threatens to attack his nation."
+  },
+  {
+      img: Joker,
+      key: 5,
+      title: 'Joker',
+      author: 'Atul',
+      ReleaseDate: "16 April 2021",
+      genere: "Action,Adventure,Sci-Fi",
+      Duration:148,
+      Rating:8.8,
+      Plot:"Arthur Fleck, a party clown, leads an impoverished life with his ailing mother. However, when society shuns him and brands him as a freak, he decides to embrace the life of crime and chaos."
+  },
+  {
+      img: Jumanji,
+      key: 6,
+      title: 'Jumanji',
+      author: 'Robert Rodriguez',
+      ReleaseDate: "8 February 2019",
+      genere: "Action,Adventure,Sci-Fi",
+      Duration:148,
+      Rating:8.8,
+      Plot:"Jumanji is a 1995 American fantasy adventure film directed by Joe Johnston. It is loosely based on the 1981 children's book by Chris Van Allsburg and the first installment of the Jumanji franchise."
+  },
+  {
+      img: Alita,
+      key: 6,
+      title: 'Alita',
+      author: 'Robert Rodriguez',
+      ReleaseDate: "8 February 2019",
+      genere: "Action,Adventure,Sci-Fi",
+      Duration:148,
+      Rating:8.8,
+      Plot:"Alita, a battle cyborg, is revived by Ido, a doctor, who realises that she actually has the soul of a teenager. Alita then sets out to learn about her past and find her true identity."
+
+  }
 ]
 
 const redirect = () => {
