@@ -81,8 +81,7 @@ const MovieFilter = () => {
     const [Acheckbox8, setAcheckbox8] = useState(false)
     const [Acheckbox9, setAcheckbox9] = useState(false)
     const [Acheckbox10, setAcheckbox10] = useState(false)
-    const [Acheckbox11, setAcheckbox11] = useState(false)
-    const [Acheckbox12, setAcheckbox12] = useState(false)
+   
 
     //------Artist checkbox firstname-------//
     const [first_name1, setfirst_name1] = useState("Manisha")
@@ -150,7 +149,7 @@ const MovieFilter = () => {
 
                         />
                     </FormControl>
-
+{/* //-------Generes filter checkbox----------/ */}
                     <FormControl className={classes.root}>
                         <Select
                             value={genres}
@@ -311,7 +310,7 @@ const MovieFilter = () => {
                     </FormControl>
 
 
-
+{/* //--------------------Artist checkbox filter-------------// */}
                     <FormControl className={classes.root}>
                         <Select
                             value={Artists}

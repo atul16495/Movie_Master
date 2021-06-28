@@ -12,6 +12,7 @@ import GridListTileBar from '@material-ui/core/GridListTileBar';
 import ListSubheader from '@material-ui/core/ListSubheader';
 import IconButton from '@material-ui/core/IconButton';
 import InfoIcon from '@material-ui/icons/Info';
+import {BrowserRouter as Router, Route, Switch,Redirect,Link} from 'react-router-dom'
 
 
 // ---------Imported Images------------
@@ -40,215 +41,6 @@ import Tanhaji_Kajol from '../../assets/Tanhaji_Kajol.jpg';
 import Tanhaji_SharadKelkar from '../../assets/Tanhaji_SharadKelkar.jpg';
 import TanhajiSaifAliKhan from '../../assets/TanhajiSaifAliKhan.jpg';
 import { SpaRounded } from '@material-ui/icons';
-
-
-const poster_url = [
-    {
-        img: Tanhaji,
-        key: 1,
-        title: 'Tanhaji',
-        author: 'Atul',
-        genere: "Action,Adventure,Sci-Fi",
-        Duration: 148,
-        Rating: 8.8,
-        trailer_url: "cffAGIYTEHU",
-        Plot: "Tanhaji, a Maratha warrior, is Shivaji Maharaj's trusted lieutenant. When the Mughals invade and conquer Kondhana fort, he sets out to reclaim it for his king and country.",
-        Artists: [
-            {
-                img: Tanhaji_AjayDevgan,
-                key: 1,
-                first_name: "Ajay",
-                last_name: "Devgan",
-            },
-            {
-                img: Tanhaji_Kajol,
-                key: 2,
-                first_name: "Kajol",
-                last_name: "Devgan",
-            },
-            {
-                img: TanhajiSaifAliKhan,
-                key: 3,
-                first_name: "Saif Ali",
-                last_name: "Khan",
-            },
-            {
-                img: Tanhaji_SharadKelkar,
-                key: 4,
-                first_name: "Sharad",
-                last_name: "Kelkar",
-            }
-        ]
-    },
-    {
-        img: Antman,
-        key: 2,
-        title: 'Antman',
-        author: 'Atul',
-        ReleaseDate: "16 April 2021",
-        genere: "Action,Adventure,Sci-Fi",
-        Duration: 148,
-        Rating: 8.8,
-        trailer_url: "ZBVhuhnWxKs",
-        Plot: "Scott, a master thief, gains the ability to shrink in scale with the help of a futuristic suit. Now he must rise to the occasion of his superhero status and protect his secret from unsavoury elements.",
-        Artists: [
-            {
-                img: Antman_EvangelineLilly,
-                key: 1,
-                first_name: "Evangeline",
-                last_name: "Lilly",
-            },
-            {
-                img: Antman_PaulRudd,
-                key: 2,
-                first_name: "Paul",
-                last_name: "Rudd",
-            }
-
-        ]
-
-    },
-    {
-        img: AvengersEndgame,
-        key: 3,
-        title: 'AvengersEndgame',
-        author: 'Atul',
-        ReleaseDate: "16 April 2021",
-        genere: "Action,Adventure,Sci-Fi",
-        Duration: 148,
-        Rating: 8.8,
-        trailer_url: "TcMBFSGVi1c",
-        Plot: "After Thanos, an intergalactic warlord, disintegrates half of the universe, the Avengers must reunite and assemble again to reinvigorate their trounced allies and restore balance.",
-        Artists: [
-            {
-                img: AvengersEndgame_ChrisEvans,
-                key: 1,
-                first_name: "Chris",
-                last_name: "Evans",
-            },
-            {
-                img: AvengersEndgame_ChrisHemsworth,
-                key: 2,
-                first_name: "Chris",
-                last_name: "Hemsworth",
-            },
-            {
-                img: AvengersEndgame_RobertDowneyJr,
-                key: 3,
-                first_name: "Robert",
-                last_name: "Downey Jr",
-            },
-            {
-                img: AvengersEndgame_ScarlettJohansson,
-                key: 4,
-                first_name: "Scarlett",
-                last_name: "Johansson",
-            }
-
-        ]
-    },
-    {
-        img: blackpanther,
-        key: 4,
-        title: 'blackpanther',
-        author: 'Atul',
-        ReleaseDate: "16 April 2021",
-        genere: "Action,Adventure,Sci-Fi",
-        Duration: 148,
-        Rating: 8.8,
-        trailer_url: "xjDjIWPwcPU",
-        Plot: "After his father's death, T'Challa returns home to Wakanda to inherit his throne. However, a powerful enemy related to his family threatens to attack his nation.",
-        Artists: [
-            {
-                img: blackpanther_LupitaNyongo,
-                key: 1,
-                first_name: "Lupita",
-                last_name: "Nyongo",
-            },
-            {
-                img: blackpanther_ChadwickAaronBoseman,
-                key: 2,
-                first_name: "Chedwick ",
-                last_name: "Aaron Boseman",
-            }
-
-        ]
-    },
-    {
-        img: Joker,
-        key: 5,
-        title: 'Joker',
-        author: 'Atul',
-        ReleaseDate: "16 April 2021",
-        genere: "Action,Adventure,Sci-Fi",
-        Duration: 148,
-        Rating: 8.8,
-        trailer_url: "zAGVQLHvwOY",
-        Plot: "Arthur Fleck, a party clown, leads an impoverished life with his ailing mother. However, when society shuns him and brands him as a freak, he decides to embrace the life of crime and chaos.",
-        Artists: [
-            {
-                img: Joker_JoaquinPhoenix,
-                key: 1,
-                first_name: "Joaquin",
-                last_name: "Phoenix",
-            }
-        ]
-    },
-    {
-        img: Jumanji,
-        key: 6,
-        title: 'Jumanji',
-        author: 'Robert Rodriguez',
-        ReleaseDate: "8 February 2019",
-        genere: "Action,Adventure,Sci-Fi",
-        Duration: 148,
-        Rating: 8.8,
-        trailer_url: "vW_fSIuE920",
-        Plot: "Jumanji is a 1995 American fantasy adventure film directed by Joe Johnston. It is loosely based on the 1981 children's book by Chris Van Allsburg and the first installment of the Jumanji franchise.",
-        Artists: [
-            {
-                img: Jumanji_DwayneJohnson,
-                key: 1,
-                first_name: "Dwayne",
-                last_name: "Johnson",
-            },
-            {
-                img: Jumanji_KarenGillan,
-                key: 2,
-                first_name: "Karen",
-                last_name: "Gillan",
-            },
-
-        ]
-    },
-    {
-        img: Alita,
-        key: 6,
-        title: 'Alita',
-        author: 'Robert Rodriguez',
-        ReleaseDate: "8 February 2019",
-        genere: "Action,Adventure,Sci-Fi",
-        Duration: 148,
-        Rating: 8.8,
-        Plot: "Alita, a battle cyborg, is revived by Ido, a doctor, who realises that she actually has the soul of a teenager. Alita then sets out to learn about her past and find her true identity.",
-        trailer_url: "w7pYhpJaJW8",
-        Artists: [
-            {
-                img: Alita_KeeanJohnson,
-                key: 1,
-                first_name: "Keean",
-                last_name: "Johnson",
-            },
-            {
-                img: Alita_RosaSalazar,
-                key: 2,
-                first_name: "Rosa",
-                last_name: "Salazar",
-            },
-
-        ]
-    }
-]
 
 
 const useStyles = makeStyles((theme) => ({
@@ -295,13 +87,13 @@ const videoOnReady = (event) => {
 //---------Youtube settings END-----//
 
 //---------Rightside Artists Grid START-----//
-const ArtistbarGridList = () => {
+const ArtistbarGridList = (props) => {
     const classes = useStyles();
 
     return (
         <div className={classes.root1}>
             <GridList cellHeight={180} className={classes.gridList}>
-                {poster_url[1].Artists.map((tile) => (
+                {props.Artists.map((tile) => (
                     <GridListTile key={tile.img}>
                         <img src={tile.img} alt={tile.title} />
                         <GridListTileBar
@@ -331,6 +123,7 @@ const Details = (props) => {
 
     //---------Rate this movie usestate END-----//
     const classes = useStyles();
+   
     return (
         <Fragment>
             <Header />
@@ -338,9 +131,9 @@ const Details = (props) => {
                 <Typography
                     variant="button"
                 >
-                    <Button className={classes.Backtohome} type='submit' color='default' variant="contained" lable="Back to Home" >
-                        <ArrowBackIosIcon /> button text
-              </Button>
+                   <Link to="/"> <Button className={classes.Backtohome} type='submit' color='default' variant="contained" lable="Back to Home" >
+                        <ArrowBackIosIcon/> button text
+                    </Button></Link>
                 </Typography>
             </div>
 
@@ -348,29 +141,28 @@ const Details = (props) => {
             <div class="container">
 
                 <div class="left">
-                    <div><img class="leftImage" src={Alita} /></div>
-                    {/* <img src={props.img} /> */}
+                    <div><img class="leftImage" src={props.location.state.img} /></div>      
 
                 </div>
                 <div class="middle">
                     <Typography variant="h2" component="h3" >
-                        Alita
+                        {props.location.state.title}
                    </Typography>
                     <Typography variant="h5" >
-                        <span className={classes.bold}>Genres:</span> <span> {poster_url[6].genere} </span>
+                        <span className={classes.bold}>Genres:</span> <span>  {props.location.state.genere} </span>
                     </Typography>
 
                     <Typography variant="h5" >
-                        <span className={classes.bold}>Duration:</span><span>{poster_url[6].Duration} </span>
+                        <span className={classes.bold}>Duration:</span><span>{props.location.state.Duration} </span>
                     </Typography>
                     <Typography variant="h5" >
-                        <span className={classes.bold}>Release Date:</span><span>{poster_url[6].ReleaseDate}</span>
+                        <span className={classes.bold}>Release Date:</span><span>{props.location.state.ReleaseDate}</span>
                     </Typography>
                     <Typography variant="h5" >
-                        <span className={classes.bold}>Rating:</span><span>{poster_url[6].Rating}</span>
+                        <span className={classes.bold}>Rating:</span><span>{props.location.state.Rating}</span>
                     </Typography>
                     <Typography className={classes.margin} variant="h5" >
-                        <span className={classes.bold}>Plot:</span><span>{poster_url[6].Plot}</span>
+                        <span className={classes.bold}>Plot:</span><span>{props.location.state.Plot}</span>
                     </Typography>
                     <Typography className={classes.margin} variant="h5" >
                         <span className={classes.bold}>Trailer:</span>
@@ -379,7 +171,7 @@ const Details = (props) => {
                     <div>
                         <YouTube
                             className="youtubeplayer"
-                            videoId={poster_url[6].trailer_url}
+                            videoId={props.location.state.trailer_url}
                             opts={{
                                 height: '400',
                                 width: '100%',
@@ -392,7 +184,7 @@ const Details = (props) => {
                     </div>
                 </div>
 
-
+{/* //--------start rating --------// */}
                 <div class="right">
                     <Typography variant="h5" className={classes.bold}>
                         Rate this movie:
@@ -403,10 +195,18 @@ const Details = (props) => {
                             if(star1==="yellow")
                             {
                                 set_star1("black")
+                                set_star2("black")
+                                set_star3("black")
+                                set_star4("black")
+                                set_star5("black")
                             }
                             else if(star1==="black")
                             {
                                 set_star1("yellow")
+                                set_star2("black")
+                                set_star3("black")
+                                set_star4("black")
+                                set_star5("black")
                             }
                             }
                         }
@@ -417,11 +217,19 @@ const Details = (props) => {
                         onClick={()=>{
                             if(star2==="yellow")
                             {
+                               
                                 set_star2("black")
+                                set_star3("black")
+                                set_star4("black")
+                                set_star5("black")
                             }
                             else if(star2==="black")
                             {
+                                set_star1("yellow")
                                 set_star2("yellow")
+                                set_star3("black")
+                                set_star4("black")
+                                set_star5("black")
                             }
                             }
                         }
@@ -432,11 +240,18 @@ const Details = (props) => {
                         onClick={()=>{
                             if(star3==="yellow")
                             {
+                               
                                 set_star3("black")
+                                set_star4("black")
+                                set_star5("black")
                             }
                             else if(star3==="black")
                             {
+                                set_star1("yellow")
+                                set_star2("yellow")
                                 set_star3("yellow")
+                                set_star4("black")
+                                set_star5("black")
                             }
                             }
                         }
@@ -447,11 +262,17 @@ const Details = (props) => {
                         onClick={()=>{
                             if(star4==="yellow")
                             {
+                              
                                 set_star4("black")
+                                set_star5("black")
                             }
                             else if(star4==="black")
                             {
+                                set_star1("yellow")
+                                set_star2("yellow")
+                                set_star3("yellow")
                                 set_star4("yellow")
+                                set_star5("black")
                             }
                             }
                         }
@@ -466,6 +287,10 @@ const Details = (props) => {
                             }
                             else if(star5==="black")
                             {
+                                set_star1("yellow")
+                                set_star2("yellow")
+                                set_star3("yellow")
+                                set_star4("yellow")
                                 set_star5("yellow")
                             }
                             }
@@ -476,7 +301,7 @@ const Details = (props) => {
                         Artists:
                    </Typography>
                     <div>
-                        <ArtistbarGridList />
+                        <ArtistbarGridList Artists={props.location.state.Artists}/>
                     </div>
 
 

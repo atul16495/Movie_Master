@@ -10,6 +10,9 @@ import ListSubheader from '@material-ui/core/ListSubheader';
 import Header from '../../common/header/Header.js'
 import InfoIcon from '@material-ui/icons/Info';
 import MovieFilter from './MovieFilter'
+import {BrowserRouter as Router, Route, Switch,useHistory,Redirect,Link} from 'react-router-dom'
+import Details from '../details/Details.js'
+
 
 // ---------Imported Images------------
 import Alita from '../../assets/Alita.jpg';
@@ -46,9 +49,10 @@ const poster_url = [
       key: 1,
       title: 'Tanhaji',
       author: 'Atul',
-      genere: "Action,Adventure,Sci-Fi",
-      Duration: 148,
-      Rating: 8.8,
+      genere: "Action,Adventure",
+      ReleaseDate: "16 march 2021",
+      Duration: 188,
+      Rating: 9.8,
       trailer_url: "cffAGIYTEHU",
       Plot: "Tanhaji, a Maratha warrior, is Shivaji Maharaj's trusted lieutenant. When the Mughals invade and conquer Kondhana fort, he sets out to reclaim it for his king and country.",
       Artists: [
@@ -83,10 +87,10 @@ const poster_url = [
       key: 2,
       title: 'Antman',
       author: 'Atul',
-      ReleaseDate: "16 April 2021",
-      genere: "Action,Adventure,Sci-Fi",
-      Duration: 148,
-      Rating: 8.8,
+      ReleaseDate: "20 April 2021",
+      genere: "Action,Sci-Fi",
+      Duration: 228,
+      Rating: 7.8,
       trailer_url: "ZBVhuhnWxKs",
       Plot: "Scott, a master thief, gains the ability to shrink in scale with the help of a futuristic suit. Now he must rise to the occasion of his superhero status and protect his secret from unsavoury elements.",
       Artists: [
@@ -111,10 +115,10 @@ const poster_url = [
       key: 3,
       title: 'AvengersEndgame',
       author: 'Atul',
-      ReleaseDate: "16 April 2021",
-      genere: "Action,Adventure,Sci-Fi",
-      Duration: 148,
-      Rating: 8.8,
+      ReleaseDate: " 25 April 2020",
+      genere: "Action,Sci-Fi",
+      Duration: 248,
+      Rating: 9.8,
       trailer_url: "TcMBFSGVi1c",
       Plot: "After Thanos, an intergalactic warlord, disintegrates half of the universe, the Avengers must reunite and assemble again to reinvigorate their trounced allies and restore balance.",
       Artists: [
@@ -150,10 +154,10 @@ const poster_url = [
       key: 4,
       title: 'blackpanther',
       author: 'Atul',
-      ReleaseDate: "16 April 2021",
+      ReleaseDate: "26 Jun 2020",
       genere: "Action,Adventure,Sci-Fi",
-      Duration: 148,
-      Rating: 8.8,
+      Duration: 208,
+      Rating: 7.8,
       trailer_url: "xjDjIWPwcPU",
       Plot: "After his father's death, T'Challa returns home to Wakanda to inherit his throne. However, a powerful enemy related to his family threatens to attack his nation.",
       Artists: [
@@ -178,9 +182,9 @@ const poster_url = [
       title: 'Joker',
       author: 'Atul',
       ReleaseDate: "16 April 2021",
-      genere: "Action,Adventure,Sci-Fi",
-      Duration: 148,
-      Rating: 8.8,
+      genere: "Action,Adventure",
+      Duration: 108,
+      Rating: 7.8,
       trailer_url: "zAGVQLHvwOY",
       Plot: "Arthur Fleck, a party clown, leads an impoverished life with his ailing mother. However, when society shuns him and brands him as a freak, he decides to embrace the life of crime and chaos.",
       Artists: [
@@ -199,8 +203,8 @@ const poster_url = [
       author: 'Robert Rodriguez',
       ReleaseDate: "8 February 2019",
       genere: "Action,Adventure,Sci-Fi",
-      Duration: 148,
-      Rating: 8.8,
+      Duration: 238,
+      Rating: 6.8,
       trailer_url: "vW_fSIuE920",
       Plot: "Jumanji is a 1995 American fantasy adventure film directed by Joe Johnston. It is loosely based on the 1981 children's book by Chris Van Allsburg and the first installment of the Jumanji franchise.",
       Artists: [
@@ -224,10 +228,10 @@ const poster_url = [
       key: 6,
       title: 'Alita',
       author: 'Robert Rodriguez',
-      ReleaseDate: "8 February 2019",
+      ReleaseDate: "28 February 2019",
       genere: "Action,Adventure,Sci-Fi",
-      Duration: 148,
-      Rating: 8.8,
+      Duration: 348,
+      Rating: 9.0,
       Plot: "Alita, a battle cyborg, is revived by Ido, a doctor, who realises that she actually has the soul of a teenager. Alita then sets out to learn about her past and find her true identity.",
       trailer_url: "w7pYhpJaJW8",
       Artists: [
@@ -247,10 +251,6 @@ const poster_url = [
       ]
   }
 ]
-
-const redirect = () => {
-    console.log("redirected!")};
-
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -290,15 +290,36 @@ const useStyles = makeStyles((theme) => ({
     },
   }));
  
-  function SingleLineGridList() {
+  function SingleLineGridList(props) {
     const classes = useStyles();
   
     return (
       <div className={classes.root}>
-        <GridList className={classes.gridList} cols={2.5}>
+     
+         <GridList className={classes.gridList} cols={2.5}>
           {poster_url.map((tile) => (
+            <Link 
+            to={{
+            pathname: `/Details`,
+            state: {
+              key:tile.key,
+              title:tile.title,
+              genere:tile.genere,
+              img:tile.img,
+              author:tile.author,
+              Duration:tile.Duration,
+              ReleaseDate:tile.ReleaseDate,
+              Rating:tile.Rating,
+              trailer_url:tile.trailer_url,
+              Plot:tile.Plot,
+              Artists:tile.Artists
+            }
+       }}
+           >
             <GridListTile className={classes.gridTile} key={tile.img}>
-              <img src={tile.img} alt={tile.title} />
+             <img 
+             src={tile.img} alt={tile.title} 
+              />
               <GridListTileBar
                 title={tile.title}
                 classes={{
@@ -311,7 +332,7 @@ const useStyles = makeStyles((theme) => ({
                   </IconButton>
                 }
               />
-            </GridListTile>
+            </GridListTile></Link>
           ))}
         </GridList>
       </div>
@@ -319,7 +340,7 @@ const useStyles = makeStyles((theme) => ({
   }
 
 
-  function ReleasedMovies() {
+  function ReleasedMovies(props) {
     const classes = useStyles1();
   
     return (
@@ -327,6 +348,24 @@ const useStyles = makeStyles((theme) => ({
         <GridList cellHeight={350} cols= {4} spacing={16} className={classes.gridList}>
           <GridListTile key="Subheader" cols={4} style={{ height: 'auto' }}> </GridListTile>
           {poster_url.map((tile) => (
+            <Link 
+            to={{
+            pathname: `/Details`,
+            state: {
+              key:tile.key,
+              title:tile.title,
+              genere:tile.genere,
+              img:tile.img,
+              author:tile.author,
+              Duration:tile.Duration,
+              ReleaseDate:tile.ReleaseDate,
+              Rating:tile.Rating,
+              trailer_url:tile.trailer_url,
+              Plot:tile.Plot,
+              Artists:tile.Artists
+            }
+       }}
+           >
             <GridListTile key={tile.img}>
               <img src={tile.img} alt={tile.title}  />
               <GridListTileBar
@@ -338,6 +377,7 @@ const useStyles = makeStyles((theme) => ({
                 }
               />
             </GridListTile>
+            </Link>
           ))}
         </GridList>
         
@@ -346,7 +386,7 @@ const useStyles = makeStyles((theme) => ({
   }
 
 
-const  Home =() => {
+const  Home =(props) => {
 
     return(
         <Fragment>
