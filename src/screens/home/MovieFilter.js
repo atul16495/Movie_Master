@@ -320,7 +320,7 @@ const MovieFilter = () => {
                             inputProps={{ 'aria-label': 'Without label' }}
                         >
                             <MenuItem value="" disabled>
-                                {Artists}
+                                Artists
                            </MenuItem>
 
                             <MenuItem ><Checkbox

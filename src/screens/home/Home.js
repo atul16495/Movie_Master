@@ -262,7 +262,7 @@ const useStyles = makeStyles((theme) => ({
       
     },
     gridTile:{
-        cellHeight: '2250'       
+        cellHeight: '250'       
     },
     gridList: {
       flexWrap: 'nowrap',
@@ -276,19 +276,16 @@ const useStyles = makeStyles((theme) => ({
       background:
         'linear-gradient(to top, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.3) 70%, rgba(0,0,0,0) 100%)',
     },
-  }));
-  
-  const useStyles1 = makeStyles((theme) => ({
- 
-    gridList: {
-      width: "auto",
-      height: "auto",
-      margin: 16,
+    gridList1: {
+      width: "100%",
+      height: "100%"
     },
-    icon: {
+    icon1: {
       color: 'rgba(255, 255, 255, 0.54)',
     },
   }));
+  
+
  
   function SingleLineGridList(props) {
     const classes = useStyles();
@@ -298,7 +295,9 @@ const useStyles = makeStyles((theme) => ({
      
          <GridList className={classes.gridList} cols={2.5}>
           {poster_url.map((tile) => (
-            <Link 
+           
+            <GridListTile  key={tile.key}>
+               <Link 
             to={{
             pathname: `/Details`,
             state: {
@@ -316,10 +315,8 @@ const useStyles = makeStyles((theme) => ({
             }
        }}
            >
-            <GridListTile className={classes.gridTile} key={tile.img}>
-             <img 
-             src={tile.img} alt={tile.title} 
-              />
+             <img className={classes.gridList1} src={tile.img} alt={tile.title}/>
+             </Link>
               <GridListTileBar
                 title={tile.title}
                 classes={{
@@ -332,7 +329,8 @@ const useStyles = makeStyles((theme) => ({
                   </IconButton>
                 }
               />
-            </GridListTile></Link>
+              
+            </GridListTile>
           ))}
         </GridList>
       </div>
@@ -341,14 +339,16 @@ const useStyles = makeStyles((theme) => ({
 
 
   function ReleasedMovies(props) {
-    const classes = useStyles1();
+    const classes = useStyles();
   
     return (
       <div className={classes.root}>
-        <GridList cellHeight={350} cols= {4} spacing={16} className={classes.gridList}>
-          <GridListTile key="Subheader" cols={4} style={{ height: 'auto' }}> </GridListTile>
+        <GridList cellHeight={350} cols= {4} spacing={16}  >
+          
           {poster_url.map((tile) => (
-            <Link 
+            
+            <GridListTile key={tile.key}>
+              <Link 
             to={{
             pathname: `/Details`,
             state: {
@@ -366,18 +366,19 @@ const useStyles = makeStyles((theme) => ({
             }
        }}
            >
-            <GridListTile key={tile.img}>
-              <img src={tile.img} alt={tile.title}  />
+              <img className={classes.gridList1} src={tile.img} alt={tile.title}  />
+              
               <GridListTileBar
                 title={tile.title}
                 subtitle={<span>Release Date: {tile.ReleaseDate}</span>}
                 actionIcon={
-                  <IconButton aria-label={`info about ${tile.title}`} className={classes.icon}>
+                  <IconButton aria-label={`info about ${tile.title}`} className={classes.icon1}>
                   </IconButton>
                 }
               />
+              </Link>
             </GridListTile>
-            </Link>
+           
           ))}
         </GridList>
         
