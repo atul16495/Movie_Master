@@ -12,7 +12,7 @@ import GridListTileBar from '@material-ui/core/GridListTileBar';
 import ListSubheader from '@material-ui/core/ListSubheader';
 import IconButton from '@material-ui/core/IconButton';
 import InfoIcon from '@material-ui/icons/Info';
-import {BrowserRouter as Router, Route, Switch,Redirect,Link} from 'react-router-dom'
+import { BrowserRouter as Router, Route, Switch, Redirect, Link } from 'react-router-dom'
 
 
 // ---------Imported Images------------
@@ -123,7 +123,7 @@ const Details = (props) => {
 
     //---------Rate this movie usestate END-----//
     const classes = useStyles();
-   
+
     return (
         <Fragment>
             <Header />
@@ -131,8 +131,8 @@ const Details = (props) => {
                 <Typography
                     variant="button"
                 >
-                   <Link to="/"> <Button className={classes.Backtohome} type='submit' color='default' variant="contained" lable="Back to Home" >
-                        <ArrowBackIosIcon/> button text
+                    <Link to="/"> <Button className={classes.Backtohome} type='submit' color='default' variant="contained" lable="Back to Home" >
+                        <ArrowBackIosIcon /> button text
                     </Button></Link>
                 </Typography>
             </div>
@@ -141,13 +141,13 @@ const Details = (props) => {
             <div class="container">
 
                 <div class="left">
-                    <div><img class="leftImage" src={props.location.state.img} /></div>      
+                    <div><img class="leftImage" src={props.location.state.img} /></div>
 
                 </div>
                 <div class="middle">
                     <Typography variant="h2" component="h3" >
                         {props.location.state.title}
-                   </Typography>
+                    </Typography>
                     <Typography variant="h5" >
                         <span className={classes.bold}>Genres:</span> <span>  {props.location.state.genere} </span>
                     </Typography>
@@ -184,124 +184,114 @@ const Details = (props) => {
                     </div>
                 </div>
 
-{/* //--------start rating --------// */}
+                {/* //--------start rating --------// */}
                 <div class="right">
                     <Typography variant="h5" className={classes.bold}>
                         Rate this movie:
                    </Typography>
                     <StarBorderIcon
                         fontSize="inherit"
-                        onClick={()=>{
-                            if(star1==="yellow")
-                            {
+                        onClick={() => {
+                            if (star1 === "yellow") {
                                 set_star1("black")
                                 set_star2("black")
                                 set_star3("black")
                                 set_star4("black")
                                 set_star5("black")
                             }
-                            else if(star1==="black")
-                            {
+                            else if (star1 === "black") {
                                 set_star1("yellow")
                                 set_star2("black")
                                 set_star3("black")
                                 set_star4("black")
                                 set_star5("black")
                             }
-                            }
                         }
-                        style={{ fontSize: "30px",color:star1 }}
+                        }
+                        style={{ fontSize: "30px", color: star1 }}
                     />
                     <StarBorderIcon
                         fontSize="inherit"
-                        onClick={()=>{
-                            if(star2==="yellow")
-                            {
-                               
+                        onClick={() => {
+                            if (star2 === "yellow") {
+
                                 set_star2("black")
                                 set_star3("black")
                                 set_star4("black")
                                 set_star5("black")
                             }
-                            else if(star2==="black")
-                            {
+                            else if (star2 === "black") {
                                 set_star1("yellow")
                                 set_star2("yellow")
                                 set_star3("black")
                                 set_star4("black")
                                 set_star5("black")
                             }
-                            }
                         }
-                        style={{ fontSize: "30px",color:star2  }}
+                        }
+                        style={{ fontSize: "30px", color: star2 }}
                     />
                     <StarBorderIcon
                         fontSize="inherit"
-                        onClick={()=>{
-                            if(star3==="yellow")
-                            {
-                               
+                        onClick={() => {
+                            if (star3 === "yellow") {
+
                                 set_star3("black")
                                 set_star4("black")
                                 set_star5("black")
                             }
-                            else if(star3==="black")
-                            {
+                            else if (star3 === "black") {
                                 set_star1("yellow")
                                 set_star2("yellow")
                                 set_star3("yellow")
                                 set_star4("black")
                                 set_star5("black")
                             }
-                            }
                         }
-                        style={{ fontSize: "30px",color:star3 }}
+                        }
+                        style={{ fontSize: "30px", color: star3 }}
                     />
                     <StarBorderIcon
                         fontSize="inherit"
-                        onClick={()=>{
-                            if(star4==="yellow")
-                            {
-                              
+                        onClick={() => {
+                            if (star4 === "yellow") {
+
                                 set_star4("black")
                                 set_star5("black")
                             }
-                            else if(star4==="black")
-                            {
+                            else if (star4 === "black") {
                                 set_star1("yellow")
                                 set_star2("yellow")
                                 set_star3("yellow")
                                 set_star4("yellow")
                                 set_star5("black")
                             }
-                            }
                         }
-                        style={{ fontSize: "30px",color:star4 }}
+                        }
+                        style={{ fontSize: "30px", color: star4 }}
                     />
                     <StarBorderIcon
                         fontSize="inherit"
-                        onClick={()=>{
-                            if(star5==="yellow")
-                            {
+                        onClick={() => {
+                            if (star5 === "yellow") {
                                 set_star5("black")
                             }
-                            else if(star5==="black")
-                            {
+                            else if (star5 === "black") {
                                 set_star1("yellow")
                                 set_star2("yellow")
                                 set_star3("yellow")
                                 set_star4("yellow")
                                 set_star5("yellow")
                             }
-                            }
                         }
-                        style={{ fontSize: "30px",color:star5}}
+                        }
+                        style={{ fontSize: "30px", color: star5 }}
                     />
                     <Typography variant="h5" className={classes.bold}>
                         Artists:
                    </Typography>
                     <div>
-                        <ArtistbarGridList Artists={props.location.state.Artists}/>
+                        <ArtistbarGridList Artists={props.location.state.Artists} />
                     </div>
 
 

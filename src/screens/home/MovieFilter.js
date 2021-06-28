@@ -2,15 +2,12 @@ import React, { Fragment, useState } from 'react'
 import FormControl from '@material-ui/core/FormControl';
 import InputLabel from '@material-ui/core/InputLabel';
 import Input from '@material-ui/core/Input';
-import {TextField, Button, Typography, Link } from '@material-ui/core'
+import { TextField, Button, Typography, Link } from '@material-ui/core'
 import { useForm, Controller } from "react-hook-form";
 import { makeStyles } from '@material-ui/core/styles';
 import MenuItem from '@material-ui/core/MenuItem';
 import Select from '@material-ui/core/Select';
 import Checkbox from '@material-ui/core/Checkbox';
-
-
-
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -81,7 +78,7 @@ const MovieFilter = () => {
     const [Acheckbox8, setAcheckbox8] = useState(false)
     const [Acheckbox9, setAcheckbox9] = useState(false)
     const [Acheckbox10, setAcheckbox10] = useState(false)
-   
+
 
     //------Artist checkbox firstname-------//
     const [first_name1, setfirst_name1] = useState("Manisha")
@@ -149,7 +146,7 @@ const MovieFilter = () => {
 
                         />
                     </FormControl>
-{/* //-------Generes filter checkbox----------/ */}
+                    {/* //-------Generes filter checkbox----------/ */}
                     <FormControl className={classes.root}>
                         <Select
                             value={genres}
@@ -310,7 +307,7 @@ const MovieFilter = () => {
                     </FormControl>
 
 
-{/* //--------------------Artist checkbox filter-------------// */}
+                    {/* //--------------------Artist checkbox filter-------------// */}
                     <FormControl className={classes.root}>
                         <Select
                             value={Artists}
